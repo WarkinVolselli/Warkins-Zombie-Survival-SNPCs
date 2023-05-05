@@ -32,6 +32,7 @@ if VJExists == true then
 	
 	VJ.AddNPC("Poison Zombie","npc_vj_wzs_poison_zombie",vCat)
 	VJ.AddNPC("Vile Poison Zombie","npc_vj_wzs_vile_poison_zombie",vCat)
+	VJ.AddNPC("Parasite","npc_vj_wzs_parasite",vCat)
 	
 	-- Convars --
 	
