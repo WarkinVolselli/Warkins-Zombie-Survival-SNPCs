@@ -24,7 +24,7 @@ ENT.RangeAttackEntityToSpawn = "obj_vj_wzs_ghoulflesh"
 ENT.RangeDistance = 500
 ENT.RangeToMeleeDistance = 100
 ENT.TimeUntilRangeAttackProjectileRelease = 0.9
-ENT.RangeAttackExtraTimers = {0.7,0.7,0.7,0.7}
+ENT.RangeAttackExtraTimers = {0.9,0.9,0.9,0.9}
 ENT.NextRangeAttackTime = 7
 
 ENT.GeneralSoundPitch1 = 100
