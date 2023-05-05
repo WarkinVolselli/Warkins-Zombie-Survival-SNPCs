@@ -25,6 +25,9 @@ if VJExists == true then
 	VJ.AddNPC("Bloated Zombie","npc_vj_wzs_bloated_zombie",vCat)
 	VJ.AddNPC("Vile Bloated Zombie","npc_vj_wzs_vile_bloated_zombie",vCat)
 	
+	VJ.AddNPC("Skeletal Walker","npc_vj_wzs_skeletal_walker",vCat)
+	VJ.AddNPC("Skeletal Shambler","npc_vj_wzs_skeletal_shambler",vCat)
+	
 	VJ.AddNPC("Ghoul","npc_vj_wzs_ghoul",vCat)
 	
 	VJ.AddNPC("Poison Zombie","npc_vj_wzs_poison_zombie",vCat)
