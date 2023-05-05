@@ -27,6 +27,7 @@ if VJExists == true then
 	
 	VJ.AddNPC("Skeletal Walker","npc_vj_wzs_skeletal_walker",vCat)
 	VJ.AddNPC("Skeletal Shambler","npc_vj_wzs_skeletal_shambler",vCat)
+	VJ.AddNPC("Bloody Bones","npc_vj_wzs_bloody_bones",vCat)
 	
 	VJ.AddNPC("Ghoul","npc_vj_wzs_ghoul",vCat)
 	
@@ -34,7 +35,11 @@ if VJExists == true then
 	VJ.AddNPC("Vile Poison Zombie","npc_vj_wzs_vile_poison_zombie",vCat)
 	VJ.AddNPC("Parasite","npc_vj_wzs_parasite",vCat)
 	
-	-- Convars --
+	-- BOSSES --
+	
+	VJ.AddNPC("[BOSS] Twisted Bones","npc_vj_wzs_boss_twisted_bones",vCat)
+	
+	-- CONVARS --
 	
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------

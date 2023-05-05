@@ -10,6 +10,8 @@ ENT.StartHealth = 430
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ENT.MeleeAttackDamage = 30
 
+ENT.BloodColor = "Yellow"
+
 ENT.HasRangeAttack = true
 ENT.RangeUseAttachmentForPos = true 
 ENT.RangeUseAttachmentForPosID = "chest"
