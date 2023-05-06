@@ -39,6 +39,10 @@ if VJExists == true then
 	
 	VJ.AddNPC("[BOSS] Twisted Bones","npc_vj_wzs_boss_twisted_bones",vCat)
 	
+	-- MINI-BOSSES --
+	
+	VJ.AddNPC("[MINI-BOSS] Bastardzine","npc_vj_wzs_miniboss_bastardzine",vCat)
+	
 	-- CONVARS --
 	
 
