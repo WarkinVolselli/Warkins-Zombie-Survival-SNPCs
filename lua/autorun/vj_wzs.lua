@@ -21,6 +21,7 @@ if VJExists == true then
 	VJ.AddNPC("Eradicator","npc_vj_wzs_eradicator",vCat)
 	
 	VJ.AddNPC("Fast Zombie","npc_vj_wzs_fast_zombie",vCat)
+	VJ.AddNPC("Ripper","npc_vj_wzs_ripper",vCat)
 	
 	VJ.AddNPC("Bloated Zombie","npc_vj_wzs_bloated_zombie",vCat)
 	VJ.AddNPC("Vile Bloated Zombie","npc_vj_wzs_vile_bloated_zombie",vCat)

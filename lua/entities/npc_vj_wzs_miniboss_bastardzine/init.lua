@@ -8,10 +8,6 @@ include('shared.lua')
 ENT.Model = {"models/vj_wzs/zombie.mdl"}
 ENT.StartHealth = 1000
 ---------------------------------------------------------------------------------------------------------------------------------------------
-ENT.AnimTbl_MeleeAttack = {"vjges_zombie_attack_frenzy","vjges_zombie_attack_frenzy","vjges_zombie_attack_frenzy","vjges_zombie_attack_frenzy","vjges_zombie_attack_frenzy","vjges_zombie_attack_frenzy"}
-
-ENT.HasLeapAttack = true
-ENT.AnimTbl_LeapAttack = {"vjseq_leapstrike"}
 ENT.LeapDistance = 800
 ENT.NextLeapAttackTime = 7
 ENT.LeapAttackVelocityForward = 1000
@@ -44,13 +40,6 @@ self:SetBodygroup(1,1)
 			self.DeathCorpseSubMaterials = {k - 1}
 			self:SetSubMaterial(k - 1, "models/zombie_fast_players/fast_zombie_sheet")
 		end
-	end
-end
----------------------------------------------------------------------------------------------------------------------------------------------
-function ENT:Zombie_CustomOnThink_AIEnabled()
-    if IsValid(self:GetEnemy()) == true && !self.Dead && self:GetEnemy() != nil && !self.MeleeAttacking && self.NextRoarT < CurTime() then
-        VJ_EmitSound(self,self.SoundTbl_Alert,self.AlertSoundLevel,self:VJ_DecideSoundPitch(self.AlertSoundPitch.a,self.AlertSoundPitch.b))
-        self.NextRoarT = CurTime() + math.random(6,24)
 	end
 end
 /*-----------------------------------------------
