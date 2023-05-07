@@ -36,6 +36,9 @@ if VJExists == true then
 	VJ.AddNPC("Vile Poison Zombie","npc_vj_wzs_vile_poison_zombie",vCat)
 	VJ.AddNPC("Parasite","npc_vj_wzs_parasite",vCat)
 	
+	VJ.AddNPC("Blood Burster","npc_vj_wzs_blood_burster",vCat)
+	VJ.AddNPC("Chem Burster","npc_vj_wzs_chem_burster",vCat)
+	
 	-- BOSSES --
 	
 	VJ.AddNPC("[BOSS] Twisted Bones","npc_vj_wzs_boss_twisted_bones",vCat)

@@ -34,6 +34,22 @@ function ENT:Zombie_CustomOnInitialize()
 self:SetMaterial("models/vj_wzs/vile_bloated_zombie_sheet")
 self:SetColor(Color(45, 90, 38, 255))
 self.NextRoarT = CurTime() + math.random(6,24)
+
+for i = 1,2 do	
+	local att = i == 2 && "eyeglow1" or "eyeglow2"		
+	local EyeGlow = ents.Create("env_sprite")
+	EyeGlow:SetKeyValue("model","vj_base/sprites/vj_glow1.vmt")
+	EyeGlow:SetKeyValue("scale","0.02")
+	EyeGlow:SetKeyValue("rendermode","5")
+	EyeGlow:SetKeyValue("rendercolor","0 255 0 255")
+	EyeGlow:SetKeyValue("spawnflags","1") 
+	EyeGlow:SetParent(self)
+	EyeGlow:Fire("SetParentAttachment",att,0)
+	EyeGlow:Spawn()
+	EyeGlow:Activate()
+	self:DeleteOnRemove(EyeGlow)
+end
+
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:RangeAttackCode_GetShootPos(TheProjectile)

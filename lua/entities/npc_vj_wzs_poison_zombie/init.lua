@@ -42,6 +42,14 @@ ENT.SoundTbl_FootStep = {"npc/zombie_poison/pz_left_foot1.wav","npc/zombie_poiso
 ENT.SoundTbl_Scuff = {"npc/zombie_poison/pz_right_foot1.wav","npc/zombie_poison/pz_right_foot1.wav","npc/zombie_poison/pz_right_foot1.wav"}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+function ENT:Zombie_CustomOnInitialize()
+if math.random(1,2) == 1 then
+self:SetMaterial("models/vj_wzs/zombie_poison/poisonzombie_sheet2")
+end
+self:SetPlayerColor(Color(math.Rand(0,255),math.Rand(0,255),math.Rand(0,255)):ToVector())
+self.NextRoarT = CurTime() + math.random(6,24)
+end
+---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:Zombie_CustomOnThink_AIEnabled()
     if IsValid(self:GetEnemy()) == true && !self.Dead && self:GetEnemy() != nil && !self.MeleeAttacking && !self.RangeAttacking && self.NextRoarT < CurTime() then
         VJ_EmitSound(self,self.SoundTbl_Alert,self.AlertSoundLevel,self:VJ_DecideSoundPitch(self.AlertSoundPitch.a,self.AlertSoundPitch.b))

@@ -6,12 +6,13 @@ include('shared.lua')
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
 ENT.Model = {"models/vj_wzs/corpse1.mdl"}
-ENT.StartHealth = 100
+ENT.StartHealth = 90
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ENT.BloodColor = "Yellow"
 
 ENT.MeleeAttackDamageType = DMG_ACID
+ENT.MeleeAttackDamage = 18
 
 ENT.HasRangeAttack = true
 ENT.RangeUseAttachmentForPos = true 
