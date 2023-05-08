@@ -17,8 +17,11 @@ ENT.GibOnDeathDamagesTable = {"All"}
 
 ENT.GeneralSoundPitch1 = 95
 ENT.GeneralSoundPitch2 = 95
+ENT.BreathSoundLevel = 60
+ENT.BreathSoundPitch = VJ_Set(120, 120)
 
 -- ====== Sound File Paths ====== --
+ENT.SoundTbl_Breath = {"npc/barnacle/barnacle_digesting1.wav","npc/barnacle/barnacle_digesting2.wav"}
 ENT.SoundTbl_BeforeMeleeAttack = {"npc/zombie/zo_attack1.wav","npc/zombie/zo_attack2.wav"}
 ENT.SoundTbl_Alert = {"npc/zombie/zombie_alert1.wav","npc/zombie/zombie_alert2.wav","npc/zombie/zombie_alert3.wav"}
 ENT.SoundTbl_Pain = {"npc/zombie/zombie_pain1.wav","npc/zombie/zombie_pain2.wav","npc/zombie/zombie_pain3.wav","npc/zombie/zombie_pain4.wav","npc/zombie/zombie_pain5.wav","npc/zombie/zombie_pain6.wav"}

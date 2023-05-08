@@ -1,6 +1,6 @@
 ENT.Base 			= "npc_vj_wzs_zombie"
 ENT.Type 			= "ai"
-ENT.PrintName 		= "Blood Burster"
+ENT.PrintName 		= "Chem Burster"
 ENT.Author 			= "Warkin"
 ENT.Contact 		= "http://steamcommunity.com/groups/vrejgaming"
 ENT.Purpose 		= "Spawn it and fight with it!"

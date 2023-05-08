@@ -18,7 +18,7 @@ ENT.BloodColor = "Oil"
 ENT.MeleeAttackDamage = 35
 ENT.GeneralSoundPitch1 = 80
 ENT.GeneralSoundPitch2 = 80
-ENT.BreathSoundLevel = 65
+ENT.BreathSoundLevel = 60
 
 -- ====== Sound File Paths ====== --
 ENT.SoundTbl_Breath = {"vj_wzs/nightmare_ambiance.ogg"}

@@ -16,6 +16,8 @@ ENT.LeapAttackVelocityUp = 300
 ENT.GeneralSoundPitch1 = 110
 ENT.GeneralSoundPitch2 = 110
 ENT.LeapAttackJumpSoundPitch = VJ_Set(90, 90)
+ENT.BreathSoundLevel = 60
+ENT.BreathSoundPitch = VJ_Set(110, 100)
 
 ENT.JumpVars = {
 	MaxRise = 650, -- How high it can jump up ((S -> A) AND (S -> E))
@@ -24,6 +26,7 @@ ENT.JumpVars = {
 }
 
 -- ====== Sound File Paths ====== --
+ENT.SoundTbl_Breath = {"npc/zombie_poison/pz_breathe_loop2.wav"}
 ENT.SoundTbl_BeforeMeleeAttack = {"npc/zombie_poison/pz_warn1.wav","npc/zombie_poison/pz_warn2.wav"}
 ENT.SoundTbl_Alert = {"npc/zombie_poison/pz_call1.wav","npc/zombie_poison/pz_call1.wav","npc/zombie_poison/pz_call1.wav"}
 ENT.SoundTbl_Pain = {"npc/zombie/zombie_pain1.wav","npc/zombie/zombie_pain2.wav","npc/zombie/zombie_pain3.wav","npc/zombie/zombie_pain4.wav","npc/zombie/zombie_pain5.wav","npc/zombie/zombie_pain6.wav"}

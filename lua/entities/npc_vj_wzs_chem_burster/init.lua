@@ -8,6 +8,7 @@ include('shared.lua')
 ENT.Model = {"models/vj_wzs/poisonzombie.mdl"}
 ENT.StartHealth = 100
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ENT.AnimTbl_IdleStand = {ACT_IDLE_STIMULATED} -- The idle animation when AI is enabled
 ENT.AnimTbl_Walk = {ACT_WALK_STIMULATED} -- Set the walking animations | Put multiple to let the base pick a random animation when it moves
 ENT.AnimTbl_Run = {ACT_WALK_STIMULATED} -- Set the running animations | Put multiple to let the base pick a random animation when it moves
 
@@ -18,9 +19,12 @@ ENT.GibOnDeathDamagesTable = {"All"}
 
 ENT.GeneralSoundPitch1 = 90
 ENT.GeneralSoundPitch2 = 90
+ENT.BreathSoundLevel = 60
+ENT.BreathSoundPitch = VJ_Set(110, 110)
 ENT.Immune_AcidPoisonRadiation = true
 
 -- ====== Sound File Paths ====== --
+ENT.SoundTbl_Breath = {"npc/barnacle/barnacle_digesting1.wav","npc/barnacle/barnacle_digesting2.wav"}
 ENT.SoundTbl_BeforeMeleeAttack = {"npc/metropolice/pain1.wav","npc/metropolice/pain2.wav","npc/metropolice/pain3.wav","npc/metropolice/pain4.wav"}
 ENT.SoundTbl_Alert = {"npc/metropolice/pain1.wav","npc/metropolice/pain2.wav","npc/metropolice/pain3.wav","npc/metropolice/pain4.wav"}
 ENT.SoundTbl_Pain = {"npc/metropolice/pain1.wav","npc/metropolice/pain2.wav","npc/metropolice/pain3.wav","npc/metropolice/pain4.wav","npc/metropolice/pain1.wav","npc/metropolice/pain2.wav","npc/metropolice/pain3.wav","npc/metropolice/pain4.wav"}

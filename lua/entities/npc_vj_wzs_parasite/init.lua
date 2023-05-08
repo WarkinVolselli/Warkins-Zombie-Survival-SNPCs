@@ -9,6 +9,7 @@ ENT.Model = {"models/vj_wzs/poisonzombie.mdl"}
 ENT.StartHealth = 800
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+ENT.AnimTbl_IdleStand = {ACT_IDLE_STIMULATED} -- The idle animation when AI is enabled
 ENT.AnimTbl_Walk = {ACT_WALK_STIMULATED} -- Set the walking animations | Put multiple to let the base pick a random animation when it moves
 ENT.AnimTbl_Run = {ACT_WALK_STIMULATED} -- Set the running animations | Put multiple to let the base pick a random animation when it moves
 
@@ -30,7 +31,7 @@ ENT.NextRangeAttackTime = 7
 ENT.GeneralSoundPitch1 = 80
 ENT.GeneralSoundPitch2 = 80
 ENT.RangeAttackPitch = VJ_Set(100, 100)
-ENT.BreathSoundLevel = 65
+ENT.BreathSoundLevel = 60
 
 -- ====== Sound File Paths ====== --
 ENT.SoundTbl_Breath = {"npc/barnacle/barnacle_digesting1.wav","npc/barnacle/barnacle_digesting2.wav"}
