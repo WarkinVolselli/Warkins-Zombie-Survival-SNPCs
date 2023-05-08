@@ -53,9 +53,9 @@ if VJExists == true then
 	VJ.AddNPC("[MINI-BOSS] Bastardzine","npc_vj_wzs_miniboss_bastardzine",vCat)
 	VJ.AddNPC("[MINI-BOSS] Nightmare","npc_vj_wzs_miniboss_nightmare",vCat)
 	
-	-- SPAWNERS --
-	
 	local vCat = "Warkin's Zombie Survival - Entities"
+	
+	-- SPAWNERS --
 	
 	VJ.AddNPC("[ZOMBIE GAS] All Zombies","obj_vj_wzs_zombiegas_all",vCat)
 	VJ.AddNPC("[ZOMBIE GAS] All Zombies (Boss and Mini-Bossless)","obj_vj_wzs_zombiegas_all_nobossbaby",vCat)
@@ -66,6 +66,24 @@ if VJExists == true then
 	VJ.AddNPC("[ZOMBIE GAS] Mini-Boss Zombies","obj_vj_wzs_zombiegas_miniboss",vCat)
 	VJ.AddNPC("[ZOMBIE GAS] Boss Zombies","obj_vj_wzs_zombiegas_boss",vCat)
 	VJ.AddNPC("[ZOMBIE GAS] None","obj_vj_wzs_zombiegas_nothing",vCat)
+	
+	VJ.AddNPC("[SPAWNER] All Zombies","obj_vj_wzs_spawner_all",vCat)
+	VJ.AddNPC("[SPAWNER] All Zombies (Boss and Mini-Bossless)","obj_vj_wzs_spawner_all_nobossbaby",vCat)
+	VJ.AddNPC("[SPAWNER] Destruction-Class Zombies","obj_vj_wzs_spawner_destruction",vCat)
+	VJ.AddNPC("[SPAWNER] Tank-Class Zombies","obj_vj_wzs_spawner_tank",vCat)
+	VJ.AddNPC("[SPAWNER] Support-Class Zombies","obj_vj_wzs_spawner_support",vCat)
+	VJ.AddNPC("[SPAWNER] Assault-Class Zombies","obj_vj_wzs_spawner_assault",vCat)
+	VJ.AddNPC("[SPAWNER] Mini-Boss Zombies","obj_vj_wzs_spawner_miniboss",vCat)
+	VJ.AddNPC("[SPAWNER] Boss Zombies","obj_vj_wzs_spawner_boss",vCat)
+
+	VJ.AddNPC("[RANDOM] All Zombies","obj_vj_wzs_random_all",vCat)
+	VJ.AddNPC("[RANDOM] All Zombies (Boss and Mini-Bossless)","obj_vj_wzs_random_all_nobossbaby",vCat)
+	VJ.AddNPC("[RANDOM] Destruction-Class Zombies","obj_vj_wzs_random_destruction",vCat)
+	VJ.AddNPC("[RANDOM] Tank-Class Zombies","obj_vj_wzs_random_tank",vCat)
+	VJ.AddNPC("[RANDOM] Support-Class Zombies","obj_vj_wzs_random_support",vCat)
+	VJ.AddNPC("[RANDOM] Assault-Class Zombies","obj_vj_wzs_random_assault",vCat)
+	VJ.AddNPC("[RANDOM] Mini-Boss Zombies","obj_vj_wzs_random_miniboss",vCat)
+	VJ.AddNPC("[RANDOM] Boss Zombies","obj_vj_wzs_random_boss",vCat)
 
 
 	-- CONVARS --
