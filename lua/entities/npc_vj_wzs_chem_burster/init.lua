@@ -18,6 +18,7 @@ ENT.GibOnDeathDamagesTable = {"All"}
 
 ENT.GeneralSoundPitch1 = 90
 ENT.GeneralSoundPitch2 = 90
+ENT.Immune_AcidPoisonRadiation = true
 
 -- ====== Sound File Paths ====== --
 ENT.SoundTbl_BeforeMeleeAttack = {"npc/metropolice/pain1.wav","npc/metropolice/pain2.wav","npc/metropolice/pain3.wav","npc/metropolice/pain4.wav"}

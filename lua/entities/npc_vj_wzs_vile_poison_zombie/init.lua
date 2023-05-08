@@ -14,6 +14,7 @@ ENT.RangeDistance = 600
 ENT.GeneralSoundPitch1 = 80
 ENT.GeneralSoundPitch2 = 80
 ENT.RangeAttackPitch = VJ_Set(110, 110)
+ENT.Immune_AcidPoisonRadiation = true
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:Zombie_CustomOnInitialize()
 if math.random(1,2) == 1 then

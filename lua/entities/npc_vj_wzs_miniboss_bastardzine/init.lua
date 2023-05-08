@@ -32,7 +32,7 @@ ENT.SoundTbl_Death = {"npc/zombie/zombie_die1.wav","npc/zombie/zombie_die2.wav",
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:Zombie_CustomOnInitialize()
 self.NextRoarT = CurTime() + math.random(6,24)
-self:SetModelScale(1.2)
+self:SetModelScale(1.1)
 self:SetColor(Color(191, 255, 127, 255))	
 self:SetBodygroup(1,1)
 	for k, v in ipairs(self:GetMaterials()) do 

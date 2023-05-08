@@ -6,7 +6,7 @@ include('shared.lua')
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
 ENT.Model = {"models/vj_wzs/skeleton.mdl"}
-ENT.StartHealth = 120
+ENT.StartHealth = 80
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ENT.Bleeds = false
 
@@ -27,10 +27,21 @@ self.NextRoarT = CurTime() + math.random(6,24)
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:CustomOnTakeDamage_BeforeDamage(dmginfo,hitgroup)
-	if (dmginfo:IsBulletDamage()) then
-		dmginfo:ScaleDamage(0.5)
-		local attacker = dmginfo:GetAttacker()
-	end
+    if 
+        dmginfo:IsBulletDamage() or
+        dmginfo:IsDamageType(DMG_BUCKSHOT) or
+        dmginfo:IsDamageType(DMG_SNIPER) or
+        dmginfo:IsDamageType(DMG_AIRBOAT)
+    then
+        dmginfo:ScaleDamage(0.5)
+    end
+    if 
+        dmginfo:IsDamageType(DMG_GENERIC) or
+        dmginfo:IsDamageType(DMG_CLUB) or
+        dmginfo:IsDamageType(DMG_SLASH)
+    then
+        dmginfo:ScaleDamage(1.5)
+    end
 end
 /*-----------------------------------------------
 	*** Copyright (c) 2023 by Warkin Iskander Volselli, All rights reserved. ***

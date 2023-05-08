@@ -6,26 +6,28 @@ include('shared.lua')
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
 ENT.Model = {"models/vj_wzs/skeleton.mdl"}
-ENT.StartHealth = 180
----------------------------------------------------------------------------------------------------------------------------------------------
-ENT.MeleeAttackDamage = 25
+ENT.StartHealth = 2000
 
-ENT.GeneralSoundPitch1 = 90
-ENT.GeneralSoundPitch2 = 90
+---------------------------------------------------------------------------------------------------------------------------------------------
+ENT.MeleeAttackDamage = 40
+ENT.GeneralSoundPitch1 = 70
+ENT.GeneralSoundPitch2 = 70
+ENT.BreathSoundPitch = VJ_Set(90, 90)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:Zombie_CustomOnInitialize()
-self:SetMaterial("models/vj_wzs/skeletal_shambler_sheet")
-self:SetColor(Color(138, 96, 96, 255))	
+self:SetMaterial("models/charple/charple1_sheet")
+self:SetColor(Color(35, 35, 35, 255))
+self:SetModelScale(1.1)
 self.NextRoarT = CurTime() + math.random(6,24)
 
 for i = 1,2 do	
 	local att = i == 2 && "eyeglow1" or "eyeglow2"		
 	local EyeGlow = ents.Create("env_sprite")
 	EyeGlow:SetKeyValue("model","vj_base/sprites/vj_glow1.vmt")
-	EyeGlow:SetKeyValue("scale","0.02")
+	EyeGlow:SetKeyValue("scale","0.03")
 	EyeGlow:SetKeyValue("rendermode","5")
-	EyeGlow:SetKeyValue("rendercolor","255 255 0 255")
+	EyeGlow:SetKeyValue("rendercolor","255 0 255 255")
 	EyeGlow:SetKeyValue("spawnflags","1") 
 	EyeGlow:SetParent(self)
 	EyeGlow:Fire("SetParentAttachment",att,0)
@@ -34,24 +36,6 @@ for i = 1,2 do
 	self:DeleteOnRemove(EyeGlow)
 end
 
-end
----------------------------------------------------------------------------------------------------------------------------------------------
-function ENT:CustomOnTakeDamage_BeforeDamage(dmginfo,hitgroup)
-    if 
-        dmginfo:IsBulletDamage() or
-        dmginfo:IsDamageType(DMG_BUCKSHOT) or
-        dmginfo:IsDamageType(DMG_SNIPER) or
-        dmginfo:IsDamageType(DMG_AIRBOAT)
-    then
-        dmginfo:ScaleDamage(0.55)
-    end
-    if 
-        dmginfo:IsDamageType(DMG_GENERIC) or
-        dmginfo:IsDamageType(DMG_CLUB) or
-        dmginfo:IsDamageType(DMG_SLASH)
-    then
-        dmginfo:ScaleDamage(1.5)
-    end
 end
 /*-----------------------------------------------
 	*** Copyright (c) 2023 by Warkin Iskander Volselli, All rights reserved. ***

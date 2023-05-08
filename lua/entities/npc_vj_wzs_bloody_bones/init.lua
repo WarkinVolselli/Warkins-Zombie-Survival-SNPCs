@@ -6,7 +6,7 @@ include('shared.lua')
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
 ENT.Model = {"models/vj_wzs/skeleton.mdl"}
-ENT.StartHealth = 430
+ENT.StartHealth = 360
 ---------------------------------------------------------------------------------------------------------------------------------------------
 ENT.MeleeAttackDamage = 28
 
@@ -33,6 +33,24 @@ for i = 1,2 do
 	self:DeleteOnRemove(EyeGlow)
 end
 
+end
+---------------------------------------------------------------------------------------------------------------------------------------------
+function ENT:CustomOnTakeDamage_BeforeDamage(dmginfo,hitgroup)
+    if 
+        dmginfo:IsBulletDamage() or
+        dmginfo:IsDamageType(DMG_BUCKSHOT) or
+        dmginfo:IsDamageType(DMG_SNIPER) or
+        dmginfo:IsDamageType(DMG_AIRBOAT)
+    then
+        dmginfo:ScaleDamage(0.6)
+    end
+    if 
+        dmginfo:IsDamageType(DMG_GENERIC) or
+        dmginfo:IsDamageType(DMG_CLUB) or
+        dmginfo:IsDamageType(DMG_SLASH)
+    then
+        dmginfo:ScaleDamage(1.5)
+    end
 end
 /*-----------------------------------------------
 	*** Copyright (c) 2023 by Warkin Iskander Volselli, All rights reserved. ***

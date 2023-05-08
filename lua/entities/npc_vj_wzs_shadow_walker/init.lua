@@ -5,36 +5,26 @@ include('shared.lua')
 	No parts of this code or any of its contents may be reproduced, copied, modified or adapted,
 	without the prior written consent of the author, unless otherwise indicated for stand-alone materials.
 -----------------------------------------------*/
-ENT.Model = {"models/vj_wzs/fatty.mdl"}
-ENT.StartHealth = 430
+ENT.Model = {"models/vj_wzs/corpse1.mdl"}
+ENT.StartHealth = 180
 ---------------------------------------------------------------------------------------------------------------------------------------------
-ENT.MeleeAttackDamage = 30
+ENT.BloodColor = "Oil"
 
-ENT.BloodColor = "Yellow"
-ENT.Immune_AcidPoisonRadiation = true
+ENT.GeneralSoundPitch1 = 80
+ENT.GeneralSoundPitch2 = 80
 
-ENT.HasRangeAttack = true
-ENT.RangeUseAttachmentForPos = true 
-ENT.RangeUseAttachmentForPosID = "chest"
-ENT.RangeAttackAnimationStopMovement = false
-ENT.AnimTbl_RangeAttack = {"vjges_throw"}
-ENT.RangeAttackEntityToSpawn = "obj_vj_wzs_ghoulflesh"
-ENT.RangeDistance = 500 
-ENT.RangeToMeleeDistance = 100
-ENT.TimeUntilRangeAttackProjectileRelease = 0.7
-ENT.RangeAttackExtraTimers = {0.7,0.7}
-ENT.NextRangeAttackTime = 5
-
-ENT.GeneralSoundPitch1 = 90
-ENT.GeneralSoundPitch2 = 90
-ENT.PainSoundPitch = VJ_Set(70, 70)
-ENT.AlertSoundPitch = VJ_Set(70, 70)
+-- ====== Sound File Paths ====== --
+ENT.SoundTbl_BeforeMeleeAttack = {"npc/antlion/attack_single1.wav","npc/antlion/attack_single2.wav","npc/antlion/attack_single3.wav"}
+ENT.SoundTbl_Alert = {"npc/antlion/idle1.wav","npc/antlion/idle2.wav","npc/antlion/idle3.wav","npc/antlion/idle4.wav","npc/antlion/idle5.wav"}
+ENT.SoundTbl_Pain = {"npc/antlion/pain1.wav","npc/antlion/pain2.wav","npc/antlion/pain1.wav","npc/antlion/pain2.wav"}
+ENT.SoundTbl_Death = {"npc/antlion/distract1.wav","npc/antlion/distract1.wav","npc/antlion/distract1.wav"}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:Zombie_CustomOnInitialize()
-self:SetMaterial("models/vj_wzs/vile_bloated_zombie_sheet")
-self:SetColor(Color(45, 90, 38, 255))
 self.NextRoarT = CurTime() + math.random(6,24)
+self:SetRenderMode( RENDERMODE_TRANSCOLOR )
+self:SetColor(Color(50, 50, 50, 245))
+self:SetMaterial("models/humans/corpse/corpse1")
 
 for i = 1,2 do	
 	local att = i == 2 && "eyeglow1" or "eyeglow2"		
@@ -49,12 +39,24 @@ for i = 1,2 do
 	EyeGlow:Spawn()
 	EyeGlow:Activate()
 	self:DeleteOnRemove(EyeGlow)
-end
+end	
 
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------
-function ENT:RangeAttackCode_GetShootPos(TheProjectile)
-	return self:CalculateProjectile("Curve", self:GetAttachment(self:LookupAttachment(self.RangeUseAttachmentForPosID)).Pos, self:GetEnemy():GetPos() + self:GetEnemy():OBBCenter(), 500) + self:GetUp()*math.Rand(-50,50) + self:GetRight()*math.Rand(-50,50)
+function ENT:CustomOnTakeDamage_BeforeDamage(dmginfo,hitgroup)
+    if 
+        dmginfo:IsDamageType(DMG_GENERIC) or
+        dmginfo:IsDamageType(DMG_CLUB) or
+        dmginfo:IsDamageType(DMG_SLASH) or
+        dmginfo:IsDamageType(DMG_BURN) or
+        dmginfo:IsDamageType(DMG_SLOWBURN) or
+        dmginfo:IsDamageType(DMG_SHOCK) or
+        dmginfo:IsDamageType(DMG_ENERGYBEAM) or
+        dmginfo:IsDamageType(DMG_PLASMA) or
+        dmginfo:IsDamageType(DMG_SONIC)
+    then
+        dmginfo:ScaleDamage(0.5)
+    end
 end
 /*-----------------------------------------------
 	*** Copyright (c) 2023 by Warkin Iskander Volselli, All rights reserved. ***
