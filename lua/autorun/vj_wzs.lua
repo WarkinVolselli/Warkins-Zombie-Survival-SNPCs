@@ -30,7 +30,11 @@ if VJExists == true then
 	VJ.AddNPC("Skeletal Shambler","npc_vj_wzs_skeletal_shambler",vCat)
 	VJ.AddNPC("Bloody Bones","npc_vj_wzs_bloody_bones",vCat)
 	
+	VJ.AddNPC("Shadow Walker","npc_vj_wzs_shadow_walker",vCat)
+	VJ.AddNPC("Void Walker","npc_vj_wzs_void_walker",vCat)
+	
 	VJ.AddNPC("Ghoul","npc_vj_wzs_ghoul",vCat)
+	VJ.AddNPC("Alpha Ghoul","npc_vj_wzs_alpha_ghoul",vCat)
 	
 	VJ.AddNPC("Poison Zombie","npc_vj_wzs_poison_zombie",vCat)
 	VJ.AddNPC("Vile Poison Zombie","npc_vj_wzs_vile_poison_zombie",vCat)
@@ -42,12 +46,69 @@ if VJExists == true then
 	-- BOSSES --
 	
 	VJ.AddNPC("[BOSS] Twisted Bones","npc_vj_wzs_boss_twisted_bones",vCat)
+	VJ.AddNPC("[BOSS] Ancient Nightmare","npc_vj_wzs_boss_ancient_nightmare",vCat)
 	
 	-- MINI-BOSSES --
 	
 	VJ.AddNPC("[MINI-BOSS] Bastardzine","npc_vj_wzs_miniboss_bastardzine",vCat)
+	VJ.AddNPC("[MINI-BOSS] Nightmare","npc_vj_wzs_miniboss_nightmare",vCat)
 	
+	-- SPAWNERS --
+	
+	local vCat = "Warkin's Zombie Survival - Entities"
+	
+	VJ.AddNPC("[ZOMBIE GAS] All Zombies","obj_vj_wzs_zombiegas_all",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] All Zombies (Boss and Mini-Bossless)","obj_vj_wzs_zombiegas_all_nobossbaby",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Destruction-Class Zombies","obj_vj_wzs_zombiegas_destruction",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Tank-Class Zombies","obj_vj_wzs_zombiegas_tank",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Support-Class Zombies","obj_vj_wzs_zombiegas_support",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Assault-Class Zombies","obj_vj_wzs_zombiegas_assault",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Mini-Boss Zombies","obj_vj_wzs_zombiegas_miniboss",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] Boss Zombies","obj_vj_wzs_zombiegas_boss",vCat)
+	VJ.AddNPC("[ZOMBIE GAS] None","obj_vj_wzs_zombiegas_nothing",vCat)
+
+
 	-- CONVARS --
+	
+    VJ.AddConVar("VJ_WZS_Printnames", 0, {FCVAR_ARCHIVE})
+    VJ.AddConVar("VJ_WZS_Chat", 0, {FCVAR_ARCHIVE})
+    VJ.AddConVar("VJ_WZS_UniqueClass", 0, {FCVAR_ARCHIVE})
+
+	if (CLIENT) then
+		local function VJ_WZS(Panel)
+			if !game.SinglePlayer() then
+				if !LocalPlayer():IsAdmin() or !LocalPlayer():IsSuperAdmin() then
+					Panel:AddControl( "Label", {Text = "You are not an admin!"})
+					Panel:ControlHelp("Note: Only admins can change these settings!")
+				return end
+			end
+			Panel:AddControl( "Label", {Text = "Note: Only admins can change these settings!"})
+			Panel:AddControl( "Label", {Text = "Please respawn any existing zombies after changing things in here!"})
+			local vj_resetbutton = {Options = {}, CVars = {}, Label = "Reset Everything:", MenuButton = "0"}
+			vj_resetbutton.Options["#vjbase.menugeneral.default"] = { 
+				VJ_WZS_Printnames = "0",
+				VJ_WZS_Chat = "0",
+				VJ_WZS_UniqueClass = "0",
+			}
+			Panel:AddControl( "Label", {Text = "Note: Only admins can change these settings!"})
+			Panel:AddControl("ComboBox", vj_resetbutton)
+
+			Panel:AddControl("Checkbox", {Label ="Enable Player-like Printnames?", Command ="VJ_WZS_Printnames"})
+			Panel:ControlHelp("If enabled, zombies will have randomized printnames instead of just their class name.")
+
+			Panel:AddControl("Checkbox", {Label ="Enable Zombie Chat?", Command ="VJ_WZS_Chat"})
+			Panel:ControlHelp("If enabled, zombies can randomly 'type' stuff in chat.")
+
+			Panel:AddControl("Checkbox", {Label ="Zombies Have Unique Class?", Command ="VJ_WZS_UniqueClass"})
+			Panel:ControlHelp("If enabled, zombies will have their own unique class instead of CLASS_ZOMBIE.")
+			Panel:ControlHelp("This means they will fight other zombie npcs.")
+		end
+
+		function VJ_AddToMenu_WZS(Panel)
+			spawnmenu.AddToolMenuOption("DrVrej","SNPC Configures","Warkin's Zombie Survival","Warkin's Zombie Survival","","", VJ_WZS, {} )
+		end
+		hook.Add("PopulateToolMenu","VJ_AddToMenu_WZS", VJ_AddToMenu_WZS )
+	end
 	
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
