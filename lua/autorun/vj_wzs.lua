@@ -35,6 +35,11 @@ if VJExists == true then
 	
 	VJ.AddNPC("Ghoul","npc_vj_wzs_ghoul",vCat)
 	VJ.AddNPC("Alpha Ghoul","npc_vj_wzs_alpha_ghoul",vCat)
+	VJ.AddNPC("Ancient Ghoul","npc_vj_wzs_ancient_ghoul",vCat)
+	
+	VJ.AddNPC("Gunk Fiend","npc_vj_wzs_gunk_fiend",vCat)
+	VJ.AddNPC("Gunk Zombie","npc_vj_wzs_gunk_zombie",vCat)
+	VJ.AddNPC("Tar Monster","npc_vj_wzs_tar_monster",vCat)
 	
 	VJ.AddNPC("Poison Zombie","npc_vj_wzs_poison_zombie",vCat)
 	VJ.AddNPC("Vile Poison Zombie","npc_vj_wzs_vile_poison_zombie",vCat)
