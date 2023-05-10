@@ -43,6 +43,11 @@ end
 
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------
+function ENT:CustomOnDeath_AfterCorpseSpawned(dmginfo, hitgroup, corpseEnt)
+self:SetRenderMode( RENDERMODE_TRANSCOLOR )
+self:SetColor(Color(50, 50, 50, 245))
+end
+---------------------------------------------------------------------------------------------------------------------------------------------
 function ENT:CustomOnTakeDamage_BeforeDamage(dmginfo,hitgroup)
     if 
         dmginfo:IsDamageType(DMG_GENERIC) or
