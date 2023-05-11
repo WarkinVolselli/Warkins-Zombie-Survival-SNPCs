@@ -33,6 +33,9 @@ if VJExists == true then
 	VJ.AddNPC("Shadow Walker","npc_vj_wzs_shadow_walker",vCat)
 	VJ.AddNPC("Void Walker","npc_vj_wzs_void_walker",vCat)
 	
+	VJ.AddNPC("Wraith","npc_vj_wzs_wraith",vCat)
+	VJ.AddNPC("Tormented Wraith","npc_vj_wzs_tormented_wraith",vCat)
+
 	VJ.AddNPC("Ghoul","npc_vj_wzs_ghoul",vCat)
 	VJ.AddNPC("Alpha Ghoul","npc_vj_wzs_alpha_ghoul",vCat)
 	VJ.AddNPC("Ancient Ghoul","npc_vj_wzs_ancient_ghoul",vCat)
@@ -90,12 +93,18 @@ if VJExists == true then
 	VJ.AddNPC("[RANDOM] Mini-Boss Zombies","obj_vj_wzs_random_miniboss",vCat)
 	VJ.AddNPC("[RANDOM] Boss Zombies","obj_vj_wzs_random_boss",vCat)
 
+	local vCat = "Warkin's Zombie Survival - Extras"
+	
+	-- EXTRAS --
+	
+	VJ.AddNPC("Zombie Stalker","npc_vj_wzs_zombie_stalker",vCat)
 
 	-- CONVARS --
 	
     VJ.AddConVar("VJ_WZS_Printnames", 0, {FCVAR_ARCHIVE})
     VJ.AddConVar("VJ_WZS_Chat", 0, {FCVAR_ARCHIVE})
     VJ.AddConVar("VJ_WZS_UniqueClass", 0, {FCVAR_ARCHIVE})
+    VJ.AddConVar("VJ_WZS_BonusContent", 0, {FCVAR_ARCHIVE})
 
 	if (CLIENT) then
 		local function VJ_WZS(Panel)
@@ -112,9 +121,17 @@ if VJExists == true then
 				VJ_WZS_Printnames = "0",
 				VJ_WZS_Chat = "0",
 				VJ_WZS_UniqueClass = "0",
+				VJ_WZS_BonusContent = "0",
 			}
 			Panel:AddControl( "Label", {Text = "Note: Only admins can change these settings!"})
 			Panel:AddControl("ComboBox", vj_resetbutton)
+			
+			Panel:AddControl("Checkbox", {Label ="Enable Bonus Content?", Command ="VJ_WZS_BonusContent"})
+			Panel:ControlHelp("If enabled, will allow NPCs from the Extras category to spawn from Zombie Gas and other spawners.")
+			
+			Panel:AddControl("Checkbox", {Label ="Zombies Have Unique Class?", Command ="VJ_WZS_UniqueClass"})
+			Panel:ControlHelp("If enabled, zombies will have their own unique class instead of CLASS_ZOMBIE.")
+			Panel:ControlHelp("This means they will fight other zombie NPCs.")
 
 			Panel:AddControl("Checkbox", {Label ="Enable Player-like Printnames?", Command ="VJ_WZS_Printnames"})
 			Panel:ControlHelp("If enabled, zombies will have randomized printnames instead of just their class name.")
@@ -122,9 +139,6 @@ if VJExists == true then
 			Panel:AddControl("Checkbox", {Label ="Enable Zombie Chat?", Command ="VJ_WZS_Chat"})
 			Panel:ControlHelp("If enabled, zombies can randomly 'type' stuff in chat.")
 
-			Panel:AddControl("Checkbox", {Label ="Zombies Have Unique Class?", Command ="VJ_WZS_UniqueClass"})
-			Panel:ControlHelp("If enabled, zombies will have their own unique class instead of CLASS_ZOMBIE.")
-			Panel:ControlHelp("This means they will fight other zombie npcs.")
 		end
 
 		function VJ_AddToMenu_WZS(Panel)
