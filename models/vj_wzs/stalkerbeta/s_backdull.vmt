@@ -1,7 +1,0 @@
-"VertexLitGeneric"
-{
-	// Original shader: VertexLitMaskedEnvMappedTexture
-	"$basetexture" "models/vj_wzs/stalkerbeta/s_backdull"
-	
-
-}
